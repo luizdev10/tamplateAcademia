@@ -7,9 +7,9 @@ de cliente para cliente fica em **um único arquivo** (`src/site.config.js`).
 > **Site de demonstração.** Todos os nomes, telefones, e-mails, endereços, CNPJ e imagens são
 > fictícios. Nenhum negócio real está representado.
 
-![Captura de tela do template (substitua por um print seu)](docs-images/print-home.png)
+![Captura de tela do template (substitua por um print seu)](docs-images/print-home.svg)
 
-> Coloque seu print em `docs-images/print-home.png` (veja a sugestão de capturas no fim deste arquivo).
+> Coloque seu print em `docs-images/print-home.svg` (veja a sugestão de capturas no fim deste arquivo).
 
 ## Tecnologias
 
