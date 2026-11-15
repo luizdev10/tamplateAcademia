@@ -1,6 +1,6 @@
 import React from 'react';
 import { Activity, Apple, Zap, ClipboardCheck, ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
-import Saulo from '../../assets/img/saulo.jpeg'
+import fotoProfissional from '../../assets/img/profissional-exemplo.svg'
 import site, { linkWhatsapp } from '../../site.config';
 
 const Nutricao = () => {
@@ -45,7 +45,7 @@ const Nutricao = () => {
 
             <div className="relative rounded-3xl overflow-hidden border-2 border-orange-500/20 shadow-2xl transition-transform hover:scale-[1.02] duration-500">
               <img
-                src={`${Saulo}`}
+                src={fotoProfissional}
                 alt={nutricao.profissional.fotoAlt}
                 className="w-full h-[550px] object-cover object-top"
               />

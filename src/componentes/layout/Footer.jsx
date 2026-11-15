@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Copyright } from "lucide-react";
-import minhaImg from "../../assets/img/logo.png";
+import minhaImg from "../../assets/img/logo-exemplo.svg";
 import site, { enderecoLinhas } from "../../site.config";
 
 function Footer() {

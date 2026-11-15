@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"; // Adicionado useRef
-import minhaImg from "../../assets/img/logo.png";
+import minhaImg from "../../assets/img/logo-exemplo.svg";
 import { House, BookOpen, Phone, X, Menu, Leaf } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import site from "../../site.config";

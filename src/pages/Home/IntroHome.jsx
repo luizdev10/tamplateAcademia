@@ -1,4 +1,4 @@
-import fotoIntro from "../../assets/img/fotointro.png";
+import fotoIntro from "../../assets/img/hero-exemplo.svg";
 import site from "../../site.config";
 
 function IntroHome() {

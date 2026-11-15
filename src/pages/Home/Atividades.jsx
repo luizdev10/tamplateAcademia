@@ -1,6 +1,6 @@
-import musc from "../../assets/img/musculacao.png";
-import peso from "../../assets/img/peso.png";
-import reabili from "../../assets/img/reabili.png";
+import musc from "../../assets/img/servico-1-exemplo.svg";
+import peso from "../../assets/img/servico-2-exemplo.svg";
+import reabili from "../../assets/img/servico-3-exemplo.svg";
 import site from "../../site.config";
 
 function Atividades() {
