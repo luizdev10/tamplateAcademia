@@ -12,7 +12,7 @@ import Nutri from "./pages/Nuticao/Nutricao";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="w-full min-h-screen bg-zinc-950">
         <DemoBanner />
         <NavBar />
