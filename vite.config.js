@@ -3,9 +3,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
-  // Em GitHub Pages use VITE_BASE=/nome-do-repositorio/ (padrão: raiz)
-  base: process.env.VITE_BASE || '/',
+// No build, o site é servido em https://<usuario>.github.io/<repositorio>/
+const REPO = '/tamplateAcademia/'
+
+export default defineConfig(({ command }) => ({
+  // VITE_BASE permite sobrescrever (ex.: domínio próprio usa '/')
+  base: process.env.VITE_BASE || (command === 'build' ? REPO : '/'),
   plugins: [
     react({ jsxRuntime: 'automatic' }),
     tailwindcss(), // O Tailwind v4 já cuida de carregar os plugins que estão no CSS
@@ -22,4 +25,4 @@ export default defineConfig({
   define: {
     'process.env': {} 
   }
-})
+}))
