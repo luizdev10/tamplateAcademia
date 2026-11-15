@@ -1,32 +1,9 @@
+import site from "../../site.config";
+
 function FAQ() {
 
 
-    const duvidas = [
-        {
-            pergunta: "Quais as formas de pagamento?",
-            resposta: "Aceitamos Pix, cartão, dinheiro ou débito."
-        },
-        {
-            pergunta: "Tem taxa de matrícula ou anuidade?",
-            resposta: "Não temos taxa alguma, apenas o Valor da mensalidade."
-        },
-        {
-            pergunta: "Preciso de contrato de fidelidade?",
-            resposta: "Não precisa de contrato algum."
-        },
-        {
-            pergunta: "Os professores ajudam a montar a ficha?",
-            resposta: "Com toda certeza, temos profissionais pronto para lhe ajudar nos seus treinos."
-        },
-        {
-            pergunta: "Quais os horários de pico?",
-            resposta: "Costuma ser em dois horarios 05:00 da manha ate as 7:00 e 17:00 as 21:00"
-        },
-        {
-            pergunta: "Aceitam Gympass?",
-            resposta: "Sim aceitamos Gympass"
-        }
-    ]
+    const duvidas = site.faq
     return (
         <>
             <section>

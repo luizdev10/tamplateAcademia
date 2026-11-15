@@ -1,18 +1,19 @@
 import { MessageCircle, Instagram, Facebook } from "lucide-react";
+import site, { linkWhatsapp } from "../../site.config";
 
 function Contato() {
   const contatos = [
     {
       nome: "WhatsApp",
       icon: <MessageCircle size={20} />,
-      link: "https://api.whatsapp.com/send?1=pt_BR&phone=5588988847746",
+      link: linkWhatsapp(),
       corHover: "hover:bg-green-600 hover:border-green-600",
       estilo: "border-green-500 text-green-500"
     },
     {
       nome: "Instagram",
       icon: <Instagram size={25} />,
-      link: "https://www.instagram.com/academiasaulofitness/",
+      link: site.redes.instagram,
       // Usando aquele gradiente do Instagram que criamos!
       corHover: "hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:border-transparent",
       estilo: "border-pink-500 text-pink-500"
@@ -20,20 +21,20 @@ function Contato() {
     {
       nome: "Facebook",
       icon: <Facebook size={20} />,
-      link: "https://www.facebook.com/academiasaulofitness",
+      link: site.redes.facebook,
       corHover: "hover:bg-blue-600 hover:border-blue-600",
       estilo: "border-blue-500 text-blue-500"
     }
-  ];
+  ].filter((c) => c.link); // redes sem link não aparecem
 
   return (
     <section className="bg-zinc-900 py-16 px-4 flex flex-col items-center justify-center border-t border-zinc-800">
       <div className="text-center mb-8">
         <h2 className="uppercase text-orange-500 font-black text-2xl md:text-3xl italic tracking-tighter">
-          Entre em contato conosco
+          {site.contatoSecao.titulo}
         </h2>
         <p className="text-zinc-400 mt-2 text-sm md:text-base">
-          Escolha sua rede preferida e fale com a nossa equipe
+          {site.contatoSecao.subtitulo}
         </p>
       </div>
 
@@ -59,7 +60,7 @@ function Contato() {
       
       {/* Detalhe sutil de copyright ou localização opcional */}
       <p className="mt-12 text-zinc-600 text-xs uppercase">
-        © 2024 Saulo Fitness - Todos os direitos reservados
+        © {site.anoCopyright} {site.nomeCompleto} - Todos os direitos reservados
       </p>
     </section>
   );

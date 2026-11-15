@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Copyright } from "lucide-react";
 import minhaImg from "../../assets/img/logo.png";
+import site, { enderecoLinhas } from "../../site.config";
 
 function Footer() {
   return (
@@ -12,12 +13,11 @@ function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img src={minhaImg} alt="Logo" className="h-10 w-auto opacity-80 rounded" />
               <h2 className="text-white font-black text-xl uppercase italic tracking-tighter">
-                Saulo <span className="text-orange-600">Fitness</span>
+                {site.nome.inicio} <span className="text-orange-600">{site.nome.destaque}</span>
               </h2>
             </div>
             <p className="text-sm leading-relaxed text-center md:text-left max-w-xs">
-              Sua academia de alta performance em Juazeiro do Norte. 
-              Focados em resultados reais e bem-estar constante.
+              {site.descricaoRodape}
             </p>
           </div>
 
@@ -27,15 +27,19 @@ function Footer() {
               Contato
             </h3>
             
-            <a href="mailto:saulofitness2015@gmail.com" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
-              <Mail size={18} className="text-orange-600" />
-              <span className="text-sm text-zinc-300">saulofitness2015@gmail.com</span>
-            </a>
+            {site.email && (
+              <a href={`mailto:${site.email}`} className="flex items-center gap-3 hover:text-orange-500 transition-colors">
+                <Mail size={18} className="text-orange-600" />
+                <span className="text-sm text-zinc-300">{site.email}</span>
+              </a>
+            )}
 
-            <a href="tel:8835722481" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
-              <Phone size={18} className="text-orange-600" />
-              <span className="text-sm text-zinc-300">(88) 3572-2481</span>
-            </a>
+            {site.telefone && (
+              <a href={`tel:${site.telefoneLink}`} className="flex items-center gap-3 hover:text-orange-500 transition-colors">
+                <Phone size={18} className="text-orange-600" />
+                <span className="text-sm text-zinc-300">{site.telefone}</span>
+              </a>
+            )}
           </div>
 
        
@@ -46,9 +50,12 @@ function Footer() {
             <div className="flex items-start gap-3 text-center md:text-left">
               <MapPin size={20} className="text-orange-600 shrink-0" />
               <p className="text-sm text-zinc-300">
-                R. Raimundo Saraiva Coelho, 281 <br />
-                Aeroporto, Juazeiro do Norte - CE <br />
-                CEP: 63020-730
+                {enderecoLinhas().map((linha, i, arr) => (
+                  <span key={i}>
+                    {linha}
+                    {i < arr.length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
           </div>
@@ -59,9 +66,9 @@ function Footer() {
         <div className="mt-12 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs uppercase tracking-[0.2em]">
           <div className="flex items-center gap-2">
             <Copyright size={12} />
-            <span>2026 Saulo Fitness - Todos os direitos reservados</span>
+            <span>{site.anoCopyright} {site.nomeCompleto} - Todos os direitos reservados</span>
           </div>
-          <span className="text-zinc-600">CNPJ: 18.001.151/0001-20</span>
+          {site.cnpj && <span className="text-zinc-600">CNPJ: {site.cnpj}</span>}
         </div>
       </div>
     </footer>

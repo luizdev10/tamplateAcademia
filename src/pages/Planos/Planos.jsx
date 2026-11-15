@@ -1,37 +1,10 @@
 import Horario from "./horario";
 import FAQ from "./Faq"
+import site, { linkWhatsapp } from "../../site.config";
 
 function Planos() {
 
-    const listaPlano = [
-        {
-            periodo: "Mensal",
-            status: "Mais Popular",
-            preco: "R$ 75",
-            corBorda: "border-orange-500",
-            corBotao: "bg-orange-500",
-            corTexto: "text-orange-500",
-            beneficios: ["30 Dias de acesso", "Acesso total", "Avaliação Fisica", "Gympass"]
-        },
-        {
-            periodo: "Quinzenal",
-            status: "Basico",
-            preco: "R$ 40",
-            corBorda: "border-green-500",
-            corBotao: "bg-green-500",
-            corTexto: "text-green-500",
-            beneficios: ["15 Dias de acesso", "Acesso total", "Avaliação Fisica", "", "", ""]
-        },
-        {
-            periodo: "Semanal",
-            status: "Comum",
-            preco: "R$ 30",
-            corBorda: "border-blue-500",
-            corBotao: "bg-blue-500",
-            corTexto: "text-blue-500",
-            beneficios: ["7 Dias de acesso", "Acesso total", "", "", "", "", "", ""]
-        }
-    ];
+    const listaPlano = site.planos;
     return (
         <section className="min-h-28 bg-zinc-950 pt-28 pb-10">
             <div className="container mx-auto px-4">
@@ -74,7 +47,7 @@ function Planos() {
                                     <div className="mt-6">
 
                                         <a
-                                            href={`https://wa.me/5588988847746?text=${encodeURIComponent("Olá! tenho interesse no plano " + item.periodo)}`}
+                                            href={linkWhatsapp("Olá! tenho interesse no plano " + item.periodo)}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={`btn btn-block ${item.corBotao} border-none text-white uppercase italic font-black`}

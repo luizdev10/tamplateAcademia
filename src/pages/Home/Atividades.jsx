@@ -1,28 +1,11 @@
 import musc from "../../assets/img/musculacao.png";
 import peso from "../../assets/img/peso.png";
 import reabili from "../../assets/img/reabili.png";
+import site from "../../site.config";
 
 function Atividades() {
-  const servicos = [
-    {
-      titulo: "Musculação",
-      img: musc,
-      desc: "Supere seus limites com treinos de força de alta performance.",
-      cor: "border-orange-500"
-    },
-    {
-      titulo: "Perca de Peso",
-      img: peso,
-      desc: "Alcance sua melhor versão com foco em queima calórica e saúde.",
-      cor: "border-red-500"
-    },
-    {
-      titulo: "Reabilitação",
-      img: reabili,
-      desc: "Recupere sua mobilidade com acompanhamento especializado.",
-      cor: "border-blue-500"
-    }
-  ];
+  const imagens = [musc, peso, reabili];
+  const servicos = site.servicos.map((s, i) => ({ ...s, img: imagens[i] }));
 
   return (
     <section className="bg-zinc-600 py-20 px-6">

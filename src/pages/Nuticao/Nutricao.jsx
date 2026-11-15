@@ -1,36 +1,21 @@
 import React from 'react';
 import { Activity, Apple, Zap, ClipboardCheck, ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
 import Saulo from '../../assets/img/saulo.jpeg'
+import site, { linkWhatsapp } from '../../site.config';
 
 const Nutricao = () => {
-  const whatsappLink = "https://wa.me/5588988847746?text=Olá! Gostaria de agendar uma consulta nutricional.";
+  const { nutricao } = site;
+  const whatsappLink = linkWhatsapp(nutricao.mensagemWhatsapp);
 
-  const pilaresNutricao = [
-    {
-      id: 1,
-      titulo: "Bioimpedância",
-      descricao: "Análise clínica detalhada da sua composição corporal, medindo com precisão gordura, massa muscular e hidratação.",
-      icone: <Activity size={32} />,
-      cor: "text-orange-700",
-      bg: "bg-orange-500/10"
-    },
-    {
-      id: 2,
-      titulo: "Plano Alimentar",
-      descricao: "Protocolos nutricionais 100% individualizados e flexíveis. Coma o que gosta e alcance o shape que sempre quis.",
-      icone: <Apple size={32} />,
-      cor: "text-orange-700",
-      bg: "bg-orange-500/10"
-    },
-    {
-      id: 3,
-      titulo: "Performance",
-      descricao: "Estratégias de suplementação e nutrição pré/pós treino para maximizar sua força e acelerar sua recuperação.",
-      icone: <Zap size={32} />,
-      cor: "text-orange-700",
-      bg: "bg-orange-500/10"
-    }
-  ];
+  const icones = [<Activity size={32} />, <Apple size={32} />, <Zap size={32} />];
+  const pilaresNutricao = nutricao.pilares.map((p, i) => ({
+    id: i + 1,
+    titulo: p.titulo,
+    descricao: p.descricao,
+    icone: icones[i],
+    cor: "text-orange-700",
+    bg: "bg-orange-500/10"
+  }));
 
   return (
     <div className="bg-zinc-950 text-zinc-100 min-h-screen font-sans">
@@ -39,12 +24,12 @@ const Nutricao = () => {
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 z-10">
-            <span className="text-orange-500 font-bold tracking-widest uppercase text-sm">Consultoria Especializada</span>
+            <span className="text-orange-500 font-bold tracking-widest uppercase text-sm">{nutricao.etiqueta}</span>
             <h1 className="text-5xl md:text-6xl font-black italic uppercase leading-none mt-4 mb-6">
-              Sua meta é <span className="text-orange-500">Resultado?</span>
+              {nutricao.tituloInicio} <span className="text-orange-500">{nutricao.tituloDestaque}</span>
             </h1>
             <p className="text-zinc-400 text-lg mb-8 max-w-lg">
-              O treino constrói, mas a nutrição define. Tenha um plano alimentar estratégico desenhado para o seu metabolismo e rotina.
+              {nutricao.texto}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={whatsappLink} className="btn bg-orange-500 hover:bg-orange-200 border-none text-zinc-950 font-black uppercase px-8 shadow-lg shadow-emerald-500/20">
@@ -61,15 +46,18 @@ const Nutricao = () => {
             <div className="relative rounded-3xl overflow-hidden border-2 border-orange-500/20 shadow-2xl transition-transform hover:scale-[1.02] duration-500">
               <img
                 src={`${Saulo}`}
-                alt="Nutricionista Profissional Homem"
+                alt={nutricao.profissional.fotoAlt}
                 className="w-full h-[550px] object-cover object-top"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent"></div>
 
               <div className="absolute bottom-6 left-6 bg-zinc-900/90 backdrop-blur-md border border-emerald-500/30 p-4 rounded-xl">
-                <p className="text-orange-500 font-black text-xl leading-none">DR. SAULO</p>
-                <p className="text-zinc-400 text-[10px] uppercase tracking-tighter">Nutrição Esportiva & Performance</p>
+                <p className="text-orange-500 font-black text-xl leading-none uppercase">{nutricao.profissional.nome}</p>
+                <p className="text-zinc-400 text-[10px] uppercase tracking-tighter">{nutricao.profissional.especialidade}</p>
+                {nutricao.profissional.registro && (
+                  <p className="text-zinc-500 text-[10px] uppercase tracking-tighter">{nutricao.profissional.registro}</p>
+                )}
               </div>
             </div>
           </div>
@@ -111,13 +99,7 @@ const Nutricao = () => {
 
           <div>
             <ul className="space-y-4">
-              {[
-                "Consulta Presencial ou Online",
-                "Acesso ao App com sua Dieta",
-                "Suporte via WhatsApp para dúvidas",
-                "Guia de Compras no Supermercado",
-                "Ebook de Receitas Fit exclusivas"
-              ].map((itens, cod) => {
+              { nutricao.acompanhamento.map((itens, cod) => {
                 return (
                   <li key={cod} className='flex gap-3 text-zinc-400'>
                     <CheckCircle2 size={30} /> <p className='text-zinc-300 text-xl '>{itens}</p>

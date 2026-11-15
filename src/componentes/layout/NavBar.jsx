@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"; // Adicionado useRef
 import minhaImg from "../../assets/img/logo.png";
 import { House, BookOpen, Phone, X, Menu, Leaf } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import site from "../../site.config";
 
 function HomeNavBar() {
     const [menuAberto, setMenuAberto] = useState(false);
@@ -65,7 +66,7 @@ function HomeNavBar() {
                 <Link to="/" className="flex items-center gap-3">
                     <img src={minhaImg} alt="Logo" className="h-12 w-auto object-contain rounded-sm" />
                     <span className="text-white font-black text-xl tracking-tighter uppercase italic">
-                        Saulo <span className="text-orange-500">Fitness</span>
+                        {site.nome.inicio} <span className="text-orange-500">{site.nome.destaque}</span>
                     </span>
                 </Link>
 

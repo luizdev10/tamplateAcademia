@@ -1,4 +1,5 @@
 import fotoIntro from "../../assets/img/fotointro.png";
+import site from "../../site.config";
 
 function IntroHome() {
   return (
@@ -12,13 +13,12 @@ function IntroHome() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-7xl font-extrabold text-white leading-tight uppercase italic">
-            Proporcionando <br />
-            <span className="text-orange-500">Saúde e Bem Estar</span>
+            {site.home.tituloLinha1} <br />
+            <span className="text-orange-500">{site.home.tituloDestaque}</span>
           </h1>
           
           <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-lg">
-            Transforme sua rotina com um treinamento de alta performance. 
-            Na <span className="font-bold text-white">Saulo Fitness</span> temos acompanhamento especializado para você superar seus limites todos os dias.
+            {site.home.textoAntesDoNome}<span className="font-bold text-white">{site.nomeCompleto}</span>{site.home.textoDepoisDoNome}
           </p>
         </div>
       </div>
