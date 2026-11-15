@@ -58,6 +58,12 @@ function Contato() {
         ))}
       </div>
       
+      {site.demo && (
+        <p className="mt-6 text-amber-400/80 text-xs text-center max-w-md border border-amber-400/30 rounded-lg px-3 py-2">
+          {site.avisoContatoDemo}
+        </p>
+      )}
+
       {/* Detalhe sutil de copyright ou localização opcional */}
       <p className="mt-12 text-zinc-600 text-xs uppercase">
         © {site.anoCopyright} {site.nomeCompleto} - Todos os direitos reservados

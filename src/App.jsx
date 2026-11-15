@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from "./componentes/layout/NavBar";
 import Footer from "./componentes/layout/Footer";
+import DemoBanner from "./componentes/layout/DemoBanner";
 import IntroHome from "./pages/Home/IntroHome";
 import Atividades from "./pages/Home/Atividades";
 import Contato from "./pages/Home/Contato";
@@ -13,6 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="w-full min-h-screen bg-zinc-950">
+        <DemoBanner />
         <NavBar />
 
         <Routes>

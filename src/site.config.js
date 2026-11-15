@@ -6,6 +6,14 @@
 // =====================================================================
 
 const site = {
+  // ---------- Modo demonstração ----------
+  // Ao entregar para um cliente: troque para false (remove faixa e avisos)
+  // e apague a meta "noindex" do index.html e o cabeçalho X-Robots-Tag do vercel.json.
+  demo: true,
+  avisoDemo: "Site de demonstração. Todos os dados são fictícios.",
+  avisoContatoDemo:
+    "Demonstração: os contatos acima são fictícios e nenhuma mensagem será enviada a ninguém real.",
+
   // ---------- Marca ----------
   // O nome é dividido em duas partes: a segunda recebe a cor de destaque.
   nome: { inicio: "Academia", destaque: "Exemplo" },

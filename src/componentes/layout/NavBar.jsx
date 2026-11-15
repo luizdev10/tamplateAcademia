@@ -3,6 +3,7 @@ import minhaImg from "../../assets/img/logo-exemplo.svg";
 import { House, BookOpen, Phone, X, Menu, Leaf } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import site from "../../site.config";
+import { ALTURA_BANNER } from "./DemoBanner";
 
 function HomeNavBar() {
     const [menuAberto, setMenuAberto] = useState(false);
@@ -59,7 +60,7 @@ function HomeNavBar() {
     ]
     return (
         <header
-            style={{ zIndex: 9999, position: 'fixed', top: 0, width: '100%' }}
+            style={{ zIndex: 9999, position: 'fixed', top: site.demo ? ALTURA_BANNER : 0, width: '100%' }}
             className={`left-0 transition-all duration-300 ${scrolled ? "bg-black shadow-lg py-2" : "bg-transparent py-4"} p-3`}
         >
             <nav className="container mx-auto px-4 flex justify-between items-center relative z-10001">

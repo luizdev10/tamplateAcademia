@@ -113,6 +113,9 @@ const Nutricao = () => {
               <a href={whatsappLink} className="uppercase font-black p-4 rounded shadow-lg shadow-white/30  bg-orange-500  hover:bg-orange-400 ">
                 fale com a gente!!
               </a>
+              {site.demo && (
+                <p className="mt-4 text-amber-400/80 text-xs text-center max-w-xs mx-auto">{site.avisoContatoDemo}</p>
+              )}
             </div>
           </div>
         </div>

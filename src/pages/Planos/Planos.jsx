@@ -62,6 +62,11 @@ function Planos() {
                     })}
                 </div>
             </div>
+            {site.demo && (
+                <p className="text-amber-400/80 text-xs text-center max-w-md mx-auto mb-4 px-4">
+                    {site.avisoContatoDemo}
+                </p>
+            )}
             <Horario />
             <FAQ />
         </section>

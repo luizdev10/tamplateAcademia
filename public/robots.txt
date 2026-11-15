@@ -1,0 +1,6 @@
+# Site de demonstração: não deve ser indexado.
+# Mantemos o rastreamento liberado de propósito para que os buscadores
+# consigam ler o "noindex" (meta tag e cabeçalho X-Robots-Tag).
+# Se bloquear com "Disallow: /", a URL ainda pode aparecer nos resultados sem descrição.
+User-agent: *
+Allow: /
